@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>臭妹妹，我慢慢的喜欢你</title>
+
+    <script>
+        //判断客户端设备，选择写入meta
+        function init_viewport(){
+            if(navigator.userAgent.indexOf('Android') != -1){
+                var version = parseFloat(RegExp.$1);
+                if(version>2.3){
+                    var width = window.outerWidth == 0 ? window.screen.width : window.outerWidth;
+                    var phoneScale = parseInt(width)/500;
+                    document.write('<meta name="viewport" content="width=500, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+                }else{
+                    document.write('<meta name="viewport" content="width=500, target-densitydpi=device-dpi, user-scalable=0">');
+                }
+            }else if(navigator.userAgent.indexOf('iPhone') != -1){
+                var phoneScale = parseInt(window.screen.width)/500;
+                document.write('<meta name="viewport" content="width=500, min-height=750, initial-scale=' + phoneScale +', maximum-scale='+phoneScale+', user-scalable=0" /> ');         //0.75   0.82
+            }else{
+                document.write('<meta name="viewport" content="width=500, height=750, initial-scale=0.64" /> '); //0.75  0.82
+            }
+        }
+        init_viewport();
+    </script> 
+
+	<style>
+		* {
+            padding: 0px;
+            margin: 0px;
+            -webkit-box-sizing: border-box;
+        } 
+        body {
+            background-color: white;
+        }
+        a {
+            color: white;
+            text-decoration: none; 
+        }
+
+        #div_container { /*最外层div，用于居中兼容PC和移动*/
+            width: 500px;
+            margin: 0px auto; 
+            position: relative; 
+            /*background-color: #FAFAFA;*/
+            font-size: 1em;
+        }
+
+
+        .div_pure_words { /*文字部分的最外层，用于定位*/
+            position: relative;
+            display: none;
+        }
+        .div_pure_words_bg { /*背景设置在这里*/
+            background-repeat: repeat; 
+            background-size: 100%; 
+            background-attachment: fixed; 
+            width: 500px;
+            min-height: 500px; 
+        }
+        .div_pure_words_height {
+            visibility: hidden;
+            padding: 30px; 
+            text-align: justify;  /*为了使文字两端对齐 */
+            white-space: pre-wrap; /*保留换行效果*/
+            font-size: 1.1em;
+            font-family: "Microsoft YaHei","Arial";
+            color: white; 
+        }
+        .div_pw_typed {
+            position: absolute;
+            left: 0;
+            right: 0;  /*4个方向定位使div充满整个画画*/
+            top: 0;
+            bottom: 0;  /*4个方向定位使div充满整个画画*/
+            width: 500px;            
+            background:rgba(255,255,255,0.8); /*半透明效果*/
+            padding: 30px; 
+            text-align: justify;  /*为了使文字两端对齐 */
+        } 
+        #span_pw_typed {
+            width:100%; /*为了使文字两端对齐 */ 
+            white-space:pre-wrap; /*保留换行效果*/ 
+            font-size: 1.1em;
+            font-family: "Microsoft YaHei","Arial";
+        }
+
+
+        #div_start_bg{
+            width: 100%; height: 100%;
+            position: absolute;
+            left: 0px; top: 0px;
+            z-index: 44;
+            background-color: white;
+        }
+	</style>
+
+    <!-- 按钮部分的样式 -->
+    <link type="text/css" rel="stylesheet" href="static/css/theme_public_btn.css">
+
+
+        
+
+        
+
+     
+
+     
+
+      
+
+    <!-- 按需加载，选择此片头时方才加载 -->
+        <link type="text/css" rel="stylesheet" href="static/css/start_onlyyou.css"> 
+
+     
+</head>
+
+<body>
+    <div id="div_container"> <!-- 最外层div，用于居中兼容PC和移动 --> 
+        <div id="div_start_bg"></div> <!-- 用于遮挡主题，作为片头的背景 -->
+
+                
+
+        <!-- 按需加载，选择此片头时方才加载 -->
+
+
+
+        
+
+
+          
+
+
+
+        
+
+
+        <!-- 按需加载，选择此片头时方才加载 -->
+            <div id="div_onlyyou"><!-- 用于设置背景 -->
+                <div id="div_oy_inner"><!-- 用于存放content --> 
+                    <div class="div_oy_text">
+                        <h1></h1>
+                        <img class="img_oy_text" src="">
+                        <p class="p_oy_text"></p>
+                        <ul id="ul_oy_benefit">
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                            <li class="li_oy_benefit"></li>                             
+                        </ul> 
+                    </div> 
+                    <ul id="ul_oy_btn">
+                        <li onclick="oy_go_next()">好&nbsp;&nbsp;❤</li>
+                        <li onclick="oy_show_benefit()">不好&nbsp;&nbsp;✖</li>
+                    </ul>
+                    <div id="div_oy_note" onclick="oy_hide_note()">
+                        <img src="static/picture/emoji_kelian.jpg" alt=""><br>
+                        请告诉我yes！
+                        <div id="div_oy_note_close">✖</div>
+                    </div>
+                    <div id="div_oy_yes">
+                        <img src="static/picture/emoji_bixin.jpg" alt=""><br>
+                        太好了！哈哈~ 
+                    </div>
+                </div>
+            </div>        
+  
+        <!-- 以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头 -->
+        <!-- 以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头 -->
+        <!-- 以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头 -->
+        <!-- 以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头 -->
+        <!-- 以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头 -->
+
+
+
+
+
+
+        <div class="div_pure_words"> <!-- 文字部分的最外层，用于定位 -->
+            <div class="div_pure_words_bg"><!-- 背景设置在这里 -->
+                <div class="div_pure_words_height"> 
+                    <!-- 正文的内容复制到这里面，撑开整个文档的高度 -->
+                </div>
+            </div> 
+            <div class="div_pw_typed"> <!-- 正文部分，绝对定位 --> 
+                <span id="span_pw_typed"></span>
+            </div> 
+        </div>
+
+
+
+
+
+        
+
+
+        
+        <div id='div_btn_container'> <!-- 按钮部分的最外层，处于文档流之中 -->
+            <div id="div_btn_inner"> <!-- 按钮部分内层，用于定位 -->
+
+                <div class='div_music_tips'></div>
+                <div class="div_btn" id="div_music" onclick="music_switch()"> <!-- 音乐按钮部分 -->
+                    <img id='img_music' src='static/picture/music_note_big.png' style='-webkit-animation:music_play_rotate 1s linear infinite'> 
+                    <audio id="audio_music" autoplay="autoplay" loop="loop">
+                        <source type="audio/mpeg">  
+                        <!-- 您的浏览器不支持播放音乐 -->
+                    </audio>
+                </div>
+
+                <div class='div_record_tips'></div>
+                <div class="div_btn" id="div_record" onclick="record_switch()"> <!-- 录音按钮部分 -->
+                    语音
+                    <audio id="audio_record" loop="loop">
+                        <source type="audio/mpeg">  
+                        <!-- 您的浏览器不支持播放音乐 -->
+                    </audio>
+                </div>
+                
+                <!-- 只在提交状态显示 只在提交状态显示 只在提交状态显示 只在提交状态显示 -->
+                <div class="div_btn" id='div_support'>
+                        <a href="javascript:;"><span>更多</span></a>
+                    </div>  
+                <!-- 只在提交状态显示 只在提交状态显示 只在提交状态显示 只在提交状态显示 -->
+
+                <!-- 只在未提交状态显示 只在未提交状态显示 只在未提交状态显示 只在未提交状态显示 -->
+                  
+                <!-- 只在未提交状态显示 只在未提交状态显示 只在未提交状态显示 只在未提交状态显示 -->
+            </div> 
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="static/js/jquery-2.0.3.min.js"></script>
+    <script src="static/js/typed.min.js"></script>
+    <script src="static/js/support_upload_as.js"></script>
+    <script src="static/js/jweixin-1.2.0.js"></script>
+    <script>
+        var window_height=$(window).height();
+        console.log('window_height ->'+window_height);
+
+        var theme='pure_words';
+        console.log('theme ->'+theme);
+        var theme_content={"pure_words_content":"\uff1a\u9047\u89c1\u4f60\u662f\u6211\u7684\u5e78\u8fd0\uff0c\u7231\u4e0a\u4f60\u662f\u6211\u7684\u53d1\u81ea\u5185\u5fc3\u7684\u8bc9\u6c42\uff0c\u62e5\u6709\u4f60\uff0c\u662f\u6211\u4e00\u751f\u7684\u8363\u5e78\uff0c\u5931\u53bb\u4f60\uff0c\u662f\u4e00\u751f\u7684\u9057\u61be\uff01\r\n:\r\n\r\n\uff1a\u6211\u591a\u4e48\u5e0c\u671b\u6709\u4e2a\u4eba\u628a\u6211\u5f53\u6210\u662f\u4ed6\u7684\u5168\u90e8\uff0c\u54ea\u6015\u6709\u4e00\u5929\u6211\u4e0d\u5728\u4e86\uff0c\u5979\u4f1a\u6ee1\u4e16\u754c\u7684\u627e\u6211\uff01\r\n\r\n \uff1a\u6bcf\u4e00\u5929\uff0c\u90fd\u671f\u5f85\u80fd\u548c\u4f60\u89c1\u9762\uff0c\u4f60\u7684\u7231\u3001\u662f\u6211\u5df2\u7ecf\u5438\u5230\u80ba\u91cc\u7684\u70df\uff0c\u526a\u4e0d\u65ad\uff0c\u90a3\u523b\u9aa8\u94ed\u5fc3\u7684\u7ea0\u7f20\uff0c\u4f60\u662f\u6211\u3001\u8fd9\u662f\u6211\u6539\u53d8\u4e0d\u4e86\u7684\u6c38\u8fdc\uff01","typed_bool":"typed_y","cursor_char":"cursor_heart","bg_style_pure_words":"bg_opacity","bg_img":"http:\/\/imgs.makusi.cn\/881_191204124002.jpg","simple_page_content":"&lt;h2 style=&quot;color: rgb(20, 178, 224);&quot;&gt;&lt;span style=&quot;color: inherit; font-size: 1em;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; \u2764\ufe0f\u8f5f\u9f95\u7063\u9f8d\u8f5f\u7228\u7658\u9a6b\u91c5\u851e\u2764\ufe0f &amp;nbsp;&lt;\/span&gt;&lt;\/h2&gt;&lt;h2 style=&quot;color: rgb(208, 208, 208);&quot;&gt;&lt;span style=&quot;color: inherit; font-size: 1em;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; \u2764\ufe0f\u8b96\u92fc\u9e1b\u9ea9\u9865\u9859\u994b\u994b\u78bc\u9f37\u2764\ufe0f&lt;\/span&gt;&lt;\/h2&gt;&lt;h2 style=&quot;color: rgb(253, 170, 37);&quot;&gt;&lt;span style=&quot;color: inherit; font-size: 1em;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; \u2764\ufe0f\u9937\u5bf5\u8d0f\u5ef3\u7063\u7228\u91c5\u6200\u92fc\u9e1b\u2764\ufe0f&amp;nbsp;&lt;\/span&gt;&lt;\/h2&gt;&lt;h2 style=&quot;color: rgb(255, 88, 61); font-style: italic;&quot;&gt;&lt;span style=&quot;color: inherit; font-size: 1em;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; \u2764\ufe0f\u7043\u93e4\u6211\u559c\u6b22\u4f60\u9b31\u9e15\u8b05\u863f\u2764\ufe0f&lt;\/span&gt;&lt;\/h2&gt;&lt;h2 style=&quot;&quot;&gt;&lt;span style=&quot;color: inherit; font-size: 1em;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; \u2764\ufe0f\u7228\u7638\u9a6b\u91c5\u6200\u8541\u8b96\u92fc\u9e1b\u7043\u2764\ufe0f&lt;\/span&gt;&lt;\/h2&gt;&lt;h2 style=&quot;color: rgb(176, 101, 226);&quot;&gt;&lt;span style=&quot;color: inherit; font-size: 1em;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; \u2764\ufe0f\u93e4\u8af3\u99a8\u984e\u9859\u994b\u9f37\u9b4e\u71fc\u860a\u2764\ufe0f&lt;\/span&gt;&lt;\/h2&gt;&lt;h2 style=&quot;color: rgb(68, 198, 123);&quot;&gt;&lt;span style=&quot;color: inherit; font-size: 1em;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;\u2764\ufe0f\u864e\u9022\u9a36\u9b43\u71fc\u76de\u9b31\u9748\u8b9e\u9471\u7e37\u2764\ufe0f&lt;\/span&gt;&lt;br&gt;&lt;\/h2&gt;&lt;p class=&quot;child-node-is-img&quot; contenteditable=&quot;false&quot;&gt;&lt;img src=&quot;http:\/\/imgs.makusi.cn\/881_191206093133.jpg&quot; width=&quot;100%&quot; height=&quot;auto&quot; id=&quot;zxeditor_img_1575595893414&quot; style=&quot;-webkit-touch-callout: none; -webkit-user-select: none;&quot;&gt;&lt;i class=&quot;__remove&quot;&gt;&lt;\/i&gt;&lt;\/p&gt;&lt;p&gt;&lt;br&gt;&lt;\/p&gt;","video_page_content":"&lt;p&gt;&lt;br&gt;&lt;\/p&gt;","bg_style":"bg_simple","m_album_img":["http:\/\/imgs.makusi.cn\/881_191204183252.jpg","http:\/\/imgs.makusi.cn\/881_191204183244.jpg","http:\/\/imgs.makusi.cn\/881_191204183300.jpg","http:\/\/imgs.makusi.cn\/881_191204183337.jpg"],"m_album_text":["\u6211\u66fe\u7231\u6155\u8bd7\u4e0e\u8fdc\u65b9\uff0c\u65e0\u6240\u7f81\u7eca\uff0c\u76f4\u5230\u9047\u89c1\u4e86\u4f60\uff0c\u624d\u53d1\u73b0\u4f60\u7684\u5fc3\u624d\u662f\u6211\u60f3\u53bb\u7684\u5730\u65b9","\u6211\u76ee\u5149\u77ed\u6d45\uff0c\u53ea\u770b\u5f97\u89c1\u4f60\uff0c\u6211\u5fc3\u80f8\u72ed\u7a84\uff0c\u53ea\u5bb9\u5f97\u4e0b\u4f60","\u6211\u4e0d\u559c\u6b22\u8fd9\u4e2a\u4e16\u754c\uff0c\u6211\u53ea\u559c\u6b22\u4f60","\u65e0\u4eba\u95ee\u6d25\u7684\u6e21\u53e3\u603b\u662f\u5f00\u6ee1\u91ce\u82b1\uff0c\u5c31\u50cf\u6211\u7231\u4f60\u5374\u652f\u652f\u543e\u543e\u8bf4\u4e0d\u51fa\u8bdd"],"m_album_loop":"loop_n","m_albumun_img":["","","","","","","","","",""],"m_albumun_text":["","","","","","",""]};
+        console.log(theme_content);
+
+        var music_json={"music_select":"m_online","m_online_id":"6","m_online_url":"http://love.145v1.com/a888/1.mp3","m_upload_name":"null","m_upload_url":"null"};
+        console.log(music_json);
+        var record_json={"record_bool":"r_false","r_wechat_time":"null","r_wechat_url":"null","r_wechat_amr":"null"};
+        console.log(record_json);
+        var signPackage={"appid":"wx47f716bdd7699533","timestamp":1575720358,"nonceStr":"VZ1lxqoQhpuCcTpB","url":"http:\/\/www.makusi.cn\/Home\/Play\/play_show\/ws\/YGdlnm9j","signature":"9358ea06399877817b34d78e7edf67d831371d34","rawString":"jsapi_ticket=sM4AOVdWfPE4DxkXGEs8VHINcjHJVwMsFjJyfreRy7CA__w04dirP031Wd4JZ7Le3IEg3v2G0Ba_CV3rxgTV5w&noncestr=VZ1lxqoQhpuCcTpB&timestamp=1575720358&url=http:\/\/www.makusi.cn\/Home\/Play\/play_show\/ws\/YGdlnm9j"};
+
+        var main_title='臭妹妹，我慢慢的喜欢你';
+        // console.log(main_title);
+        if(main_title=='' || main_title=='null'){  //允许标题为空
+            document.title='慢慢喜欢你';
+        } 
+        // console.log(""); 
+
+
+        var pure_words_content=theme_content['pure_words_content'];
+        var str_cursorChar; 
+        var typed_bool;
+
+        var interval_pw_height;
+        var height_div_pw=$(".div_pure_words_height").height();
+        function init_pure_words(){
+            //允许内容为空时直接展示，不设置为随机内容，用于空主题
+            if(typeof(pure_words_content)=='undefined'){ //处理全新作品
+                var array_str_temp=[];
+                random_text_array(array_str_temp,12); //获取随机的模板文字
+                // array_str_temp.push('你现在看到的只是案例，文字是可以自定义哒，6000字以下');
+                pure_words_content=array_str_temp.join('\r\r');
+            }
+            $(".div_pure_words_height").html(pure_words_content+'22222');  //初始化复制内容，撑开文档高度            
+            
+            // 初始化设置div的bg图片 初始化设置div的bg图片
+            if(typeof(theme_content['bg_style_pure_words'])!='undefined' && theme_content['bg_style_pure_words']=='bg_opacity'){
+                if(typeof(theme_content['bg_img'])!='undefined' && theme_content['bg_img']!=''){                    
+                    $(".div_pure_words_bg").css({"background-image": "url("+theme_content['bg_img']+")"});
+                }
+            } 
+
+            //以下是打字效果的js 
+            if(typeof(theme_content['cursor_char'])!='undefined' && theme_content['cursor_char']!=''){
+                switch(theme_content['cursor_char']){ //设置打字光标的样式
+                    case 'cursor_heart':
+                        str_cursorChar='❤';
+                        break;
+                    case 'cursor_sub':
+                        str_cursorChar='_';
+                        break;
+                    case 'cursor_music':
+                        str_cursorChar='♫';
+                        break;
+                    case 'cursor_star':
+                        str_cursorChar='★';
+                        break;
+                    case 'cursor_sun':
+                        str_cursorChar='☀';
+                        break;
+                    default:
+                        str_cursorChar='|';
+                }
+            }else{ //处理全新作品，默认显示打字效果
+                str_cursorChar='❤';
+            }
+            
+            //判断用户有没有选择打字效果
+            if(typeof(theme_content['typed_bool'])!='undefined' && theme_content['typed_bool']!=''){
+                typed_bool= theme_content['typed_bool']=='typed_y' ? true : false;                  
+            }else{
+                typed_bool=false; //默认显示打字效果
+            } 
+            // console.log(typed_bool);
+        
+            display_pure_words(); 
+            $(".div_pure_words").fadeIn();
+            
+            interval_pw_height=setInterval(function(){
+                console.log('div_pure_words_height -> '+$('.div_pure_words_height').height());
+                var least_height_div_pw=$('.div_pure_words_height').height();
+                if(least_height_div_pw>height_div_pw){
+                    height_div_pw=least_height_div_pw;
+                }else{
+                    clearInterval(interval_pw_height);
+                    $(".div_pure_words_height").height(least_height_div_pw+100);
+                    if($(".div_pure_words_height").height()<window_height){
+                        $(".div_pure_words_height").height(window_height); //不能小于窗口的高度
+                        console.log('let us be high as window');
+                    } 
+                }
+            },100);
+        }
+
+        
+        function display_pure_words(){
+            if(typed_bool){ 
+                var typed_pure_words = new Typed('#span_pw_typed', {
+                    strings: [pure_words_content], //输入内容, 支持html标签
+                    typeSpeed: 120, //打字速度
+                    cursorChar: str_cursorChar,//替换光标的样式
+                    contentType: 'html', //值为html时，将打印的文本标签直接解析html标签
+                    onComplete: function(abc){
+                                // console.log(abc); 
+                                console.log('finished typing words'); 
+                                // console.log($('#span_pw_typed').height()-$(".div_pure_words_height").height());
+                            },
+                });
+            }else{
+                //如果不需要打字效果就直接显示
+                $("#span_pw_typed").html(pure_words_content).fadeIn(); 
+            }
+            init_attachment();
+        } 
+
+
+        function random_text_array(temp_array,length){  //获取随机的模板文字
+            console.log('random_text_array');
+            var random_array=[];
+            while(random_array.length<length){
+                // var random_num=Math.floor(Math.random()*(array_as_pics.length-0))+0;
+                var random_num=Math.floor(Math.random()*(array_as_words_love.length)); //随机取值 
+                if(random_array.indexOf(random_num)==-1){
+                    random_array.push(random_num);
+                }
+            }
+            // console.log(random_array);
+            for(var i=0; i<length; i++){  
+                temp_array.push(array_as_words_love[random_array[i]]); //获取随机的模板文字
+            }
+        }         
+        
+    </script>
+
+
+
+
+
+
+
+        
+
+     <!-- 按需加载，选择此片头时方才加载 -->
+    
+
+    <script> 
+        var start_content={"loveformat_text":"","bg_img":"http://love.145v1.com/a888/1.jpg&quot&quot","img_src":"http://love.145v1.com/a11/1.gif","intersect_text":"\u9047\u89c1\u4f60\u662f\u6211\u7684\u5e78\u8fd0\uff0c\u7231\u4e0a\u4f60\u662f\u6211\u7684\u53d1\u81ea\u5185\u5fc3\u7684\u8bc9\u6c42\uff0c\u62e5\u6709\u4f60\uff0c\u662f\u6211\u4e00\u751f\u7684\u8363\u5e78\uff0c\u5931\u53bb\u4f60\uff0c\u662f\u4e00\u751f\u7684\u9057\u61be\uff01","cursor_char":"cursor_heart","bg_style":"bg_simple","img_bool":"img_true","chase_title":"\u81ed\u59b9\u59b9\u505a\u6211\u5973\u670b\u53cb\u597d\u4e0d\u597d","chase_text":"\u6211\u77e5\u9053\u9047\u89c1\u4e0d\u5bb9\u6613\uff0c\u9519\u8fc7\u4e86\u4f1a\u5f88\u53ef\u60dc\uff0c\u6211\u5e0c\u671b\u4f59\u751f\u90fd\u662f\u56de\u5fc6\uff0c\u6211\u60f3\u4f59\u751f\u6bcf\u5929\u90fd\u662f\u4f60\uff0c\u81ed\u59b9\u59b9\uff0c\u6211\u559c\u6b22\u4f60\u597d\u4e45\u4e86\uff0c\u505a\u6211\u5bf9\u8c61\u597d\u4e0d\u597d\uff1f","chase_benefit":["\u5973\u670b\u53cb\u6c38\u8fdc\u662f\u5bf9\u7684","\u5982\u679c\u5973\u670b\u53cb\u9519\u4e86\uff0c\u4e00\u5b9a\u662f\u6211\u770b\u9519\u4e86","\u5982\u679c\u6ca1\u9519\uff0c\u4e00\u5b9a\u662f\u6211\u60f3\u6cd5\u9519\u4e86","\u5982\u679c\u6211\u6ca1\u60f3\u9519\uff0c\u53ea\u662f\u5973\u670b\u53cb\u4e0d\u8ba4\uff0c\u5973\u670b\u53cb\u5c31\u6ca1\u9519","\u5982\u679c\u5973\u670b\u53cb\u4e0d\u8ba4\u9519\uff0c\u8fd8\u8bf4\u5973\u670b\u53cb\u7684\u9519\uff0c\u90a3\u5c31\u662f\u6211\u7684\u9519","\u5982\u679c\u5973\u670b\u53cb\u8ba4\u9519\u4e86\uff0c\u8bf7\u53c2\u8003\u7b2c\u4e00\u6761"]}; //可能为null
+        console.log(start_content); 
+
+        var start_id;
+        $(function(){
+            //此事件为触发互动创意
+            start_id='onlyyou'; //可能为null
+            init_start(start_id);
+        });
+        
+        function init_start(start_id){ 
+            console.log('init_start ->'+start_id);
+            switch(start_id){
+                case 'loveformat':
+                    $('.div_loveformat').show();
+                    init_loveformat();
+                    break;
+                case 'hearttree':
+                    $('#div_hearttree').show();
+                    init_hearttree();
+                    break;
+                case 'courage':
+                    $('#div_courage').show();
+                    init_courage();
+                    break;
+                case 'birthdaycake':
+                    $('#div_dbcake').show();
+                    init_birthdaycake();
+                    break;
+                case 'intersect':
+                    $('#div_intersect').show();
+                    init_intersect();
+                    break;
+                case 'onlyyou':
+                    $('#div_onlyyou').show();
+                    init_onlyyou();
+                    break;
+                default:
+                    init_theme(); 
+            }
+        } 
+
+        //开始动画主体部分
+        function init_theme(){
+            console.log('init_theme');
+            $('#div_start_bg').fadeOut();
+            init_pure_words();            
+        }
+
+    </script>
+
+
+
+
+    
+
+        
+
+    
+
+    
+
+     
+
+
+    <!-- 按需加载，选择此片头时方才加载 -->
+        <script src="static/js/start_onlyyou.js"></script>        
+
+
+
+    <script> 
+        var attachment='null'; //可能为null
+        var attached_content={"timer_desc":"","timer_time":"2019-12-05","timer_count_type":"timer_count_postive"}; //可能为null
+        console.log(attached_content); 
+       
+        function init_attachment(){  //开始attachment
+            console.log('init_attachment ->'+attachment);
+            switch(attachment){
+                case 'timer':
+                    init_at_timer();
+                    break;
+                default:
+                    return; 
+            }
+        } 
+    </script>
+
+    
+
+
+    <script src='static/js/jweixin-1.2.0.js'></script>
+	<script src='static/js/theme_common.js'></script> <!-- 音乐控制和微信设置等公共部分js外部引入 -->
+
+
+
+
+
+</body>
+</html>
