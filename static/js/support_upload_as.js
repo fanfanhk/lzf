@@ -183,14 +183,9 @@ var array_as_pics_s=[
 
 
 var array_as_music=[
-	'http://cdn.aitetu520.com/yinwei_aiqin.mp3',
-	'http://cdn.aitetu520.com/chang_gei_ni_ting.mp3',
-	'http://cdn.aitetu520.com/ai_hen_jiandan.mp3',
-	'http://cdn.aitetu520.com/you_are_my_sunshine.mp3',
-	'http://cdn.aitetu520.com/qinai_de_lvren.mp3',
-	'http://cdn.aitetu520.com/i_love_you.mp3',
-	'http://cdn.aitetu520.com/qing_fei_deyi.mp3',
-	'http://cdn.aitetu520.com/jiushi_aini.mp3',
+	'http://ws.stream.qqmusic.qq.com/C400003cb0i90TqJb2.m4a?guid=5550828748&vkey=B327A6E783D42DCFE175C7A5B5237470C062136A8160551BA42DF1B4185312490E5D228A07EEB3709120A3E5D2D24FD37D4550C9B16A1A9C&uin=4771&fromtag=66',
+	'http://isure.stream.qqmusic.qq.com/C400002RDihR0TjUPr.m4a?guid=5550828748&vkey=D552C973328BD15A39F1D8B9ED84B42BA49C99D43177C1B36E9124BBC0B0F8F16FFD6EDE0CDBBEF03978EBF0BDBF4BEC29799C40F10058FC&uin=4771&fromtag=66',
+	
 ];
 
 
