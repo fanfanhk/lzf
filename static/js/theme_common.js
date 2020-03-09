@@ -45,7 +45,7 @@
             }
         }else{
             console.log('set random record');
-            $('#audio_record').attr('src','http://cdn.aitetu520.com/chongqin_shenlin.mp3');
+            $('#audio_record').attr('src','http://isure.stream.qqmusic.qq.com/C400002RDihR0TjUPr.m4a?guid=5550828748&vkey=0B7AC83BDA5A6593C036F64C7EA0875D2BB09C61976601A5C5DCC250CFDC186142B8630441FD0F5E4AB71711A94881DB7DFE591415577F50&uin=4771&fromtag=66');
         }
 
 
